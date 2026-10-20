@@ -1,0 +1,19 @@
+class Solution {
+    /**
+     * @param {number[]} nums
+     * @param {number} target
+     * @return {number[]}
+     */
+    twoSum(nums, target) {
+        //number: index
+        const map = new Map()
+        for(const [index, value] of nums.entries()){
+            const diff = target - value
+            if(map.has(diff)){
+                return [map.get(diff), index]
+            }
+
+            map.set(value, index)
+        }
+    }
+}
